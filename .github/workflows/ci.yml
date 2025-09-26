@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Python backend setup
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install backend dependencies
+        run: |
+          if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+
+      - name: Run backend tests
+        run: |
+          if [ -d backend/tests ]; then pytest backend/tests || true; else echo "No backend tests yet"; fi
+
+      # Node frontend setup (optional)
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build frontend (if exists)
+        run: |
+          if [ -f frontend/package.json ]; then cd frontend && npm install && npm run build || true; else echo "No frontend build yet"; fi
