@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Staff Dashboard</h1>
+  <a href="index.html">← Back</a>
+  <div class="grid">
+    <div class="card">
+      <h3>Patients</h3>
+      <table id="patients"><thead><tr><th>Name</th><th>Email</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="card">
+      <h3>Upcoming Appointments</h3>
+      <table id="appointments"><thead><tr><th>Patient</th><th>Date</th><th>Time</th><th>Doctor</th></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+</div>
+<script>
+const API="http://localhost:5000";
+async function loadPatients(){
+  const res = await fetch(API+"/patients");
+  const data = await res.json();
+  const tbody=document.querySelector('#patients tbody'); tbody.innerHTML="";
+  data.forEach(p=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${p.name}</td><td>${p.email}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+async function loadAppointments(){
+  const res = await fetch(API+"/appointments");
+  const data = await res.json();
+  const tbody=document.querySelector('#appointments tbody'); tbody.innerHTML="";
+  data.forEach(a=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${a.patient_name||"-"}</td><td>${a.date}</td><td>${a.time}</td><td>${a.doctor}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+loadPatients(); loadAppointments();
+</script>
+</body>
+</html>
