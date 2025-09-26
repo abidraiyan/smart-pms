@@ -27,7 +27,5 @@ Open `frontend/index.html` in your browser.
 
 ## Notes
 - Data is stored in `backend/data.json` for demo purposes.
-- Add PyTest tests in `backend/tests/` for extra marks.
-- Push this folder to GitHub and create Issues/Branches/PRs for evidence.
 ```
 
