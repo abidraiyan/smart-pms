@@ -1,0 +1,12 @@
+/* (Simplified, see navfix styling) */
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f9fc;}
+.container { max-width:960px; margin:90px auto 40px; background:#fff; padding:24px; border-radius:12px; }
+.topnav { position:fixed; top:0; left:0; right:0; height:56px; background:#4e79a7; display:flex; align-items:center; padding:0 16px; }
+.topnav a { color:#fff; text-decoration:none; margin-right:18px; padding:8px 10px; }
+form label{display:block; margin-top:12px;}
+form input, form button{width:100%; padding:10px; margin-top:6px; border:1px solid #ccc; border-radius:6px;}
+form button{background:#4e79a7; color:#fff; border:none; cursor:pointer; margin-top:16px;}
+form button:hover{background:#3b5d80;}
+table{width:100%; border-collapse:collapse; margin-top:12px;}
+th,td{border:1px solid #ddd; padding:8px;}
+th{background:#f0f0f0;}

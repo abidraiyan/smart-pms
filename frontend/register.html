@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Register</title>
+<link rel='stylesheet' href='style.css'><link rel='stylesheet' href='chatbot.css'></head>
+<body><nav class='topnav'><span class='brand'>Smart PMS</span><a href='dashboard.html'>Dashboard</a><a href='register.html'>Register</a><a href='booking.html'>Booking</a><a href='login.html'>Logout</a></nav>
+<div class='container'><h2>Register Patient</h2><form id='registerForm'><label>Name</label><input id='name' required><label>Email</label><input id='email' required><button type='submit'>Register</button></form><p id='registerMessage'></p></div>
+<div id='chatbot'><div id='chatHeader'>AI Chatbot</div><div id='chatBody'></div><div id='chatInputBox'><input id='chatInput'><button id='chatSend' onclick='sendMessage()'>Send</button></div></div>
+<script src='chatbot.js'></script><script>document.getElementById("registerForm").addEventListener("submit",function(e){e.preventDefault();document.getElementById("registerMessage").textContent=document.getElementById("name").value+" registered successfully!";});</script>
+</body></html>

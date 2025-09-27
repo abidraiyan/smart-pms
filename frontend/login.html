@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Login</title><link rel='stylesheet' href='style.css'></head>
+<body><nav class='topnav'><span class='brand'>Smart PMS</span><a href='login.html'>Login</a></nav>
+<div class='container'><h2>Login</h2>
+<form id='loginForm'><label>Username</label><input id='username' required><label>Password</label><input type='password' id='password' required><button type='submit'>Login</button></form>
+<p id='loginMessage'></p></div>
+<script>document.getElementById("loginForm").addEventListener("submit",function(e){e.preventDefault();const u=document.getElementById("username").value;const p=document.getElementById("password").value;if(u==="admin"&&p==="1234"){window.location.href="dashboard.html";}else{document.getElementById("loginMessage").textContent="Invalid credentials. Try admin/1234";}});</script>
+</body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Dashboard</title>
+<link rel='stylesheet' href='style.css'><link rel='stylesheet' href='chatbot.css'></head>
+<body><nav class='topnav'><span class='brand'>Smart PMS</span><a href='dashboard.html'>Dashboard</a><a href='register.html'>Register</a><a href='booking.html'>Booking</a><a href='login.html'>Logout</a></nav>
+<div class='container'><h2>Staff Dashboard</h2><h3>Patients</h3><table id='patientsTable'><tr><th>Name</th><th>Email</th></tr></table><h3>Appointments</h3><table id='appointmentsTable'><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th></tr></table></div>
+<div id='chatbot'><div id='chatHeader'>AI Chatbot</div><div id='chatBody'></div><div id='chatInputBox'><input id='chatInput'><button id='chatSend' onclick='sendMessage()'>Send</button></div></div>
+<script src='chatbot.js'></script><script>const patients=[{name:'John Doe',email:'john@example.com'},{name:'Jane Smith',email:'jane@example.com'}];
+const appointments=[{patient:'John Doe',doctor:'Dr. Adams',date:'2025-10-05',time:'10:00'},{patient:'Jane Smith',doctor:'Dr. Lee',date:'2025-10-06',time:'11:30'}];
+patients.forEach(p=>{document.getElementById("patientsTable").innerHTML+=`<tr><td>${p.name}</td><td>${p.email}</td></tr>`;});
+appointments.forEach(a=>{document.getElementById("appointmentsTable").innerHTML+=`<tr><td>${a.patient}</td><td>${a.doctor}</td><td>${a.date}</td><td>${a.time}</td></tr>`;});</script>
+</body></html>

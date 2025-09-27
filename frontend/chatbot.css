@@ -1,0 +1,8 @@
+#chatbot{position:fixed; bottom:20px; right:20px; width:320px; border:1px solid #ddd; background:#fff; border-radius:10px; overflow:hidden; font-family:Arial,sans-serif;}
+#chatHeader{background:#4e79a7; color:#fff; padding:10px; text-align:center;}
+#chatBody{height:240px; overflow-y:auto; padding:10px;}
+#chatInputBox{display:flex;}
+#chatInput{flex:1; padding:8px; border:none;}
+#chatSend{background:#4e79a7; color:#fff; border:none; padding:8px 12px; cursor:pointer;}
+.msg.user{text-align:right; color:blue;}
+.msg.bot{text-align:left; color:green;}

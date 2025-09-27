@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Booking</title>
+<link rel='stylesheet' href='style.css'><link rel='stylesheet' href='chatbot.css'></head>
+<body><nav class='topnav'><span class='brand'>Smart PMS</span><a href='dashboard.html'>Dashboard</a><a href='register.html'>Register</a><a href='booking.html'>Booking</a><a href='login.html'>Logout</a></nav>
+<div class='container'><h2>Book Appointment</h2><form id='bookingForm'><label>Patient</label><input id='patient' required><label>Doctor</label><input id='doctor' required><label>Date</label><input type='date' id='date' required><label>Time</label><input type='time' id='time' required><button type='submit'>Book</button></form><p id='bookingMessage'></p></div>
+<div id='chatbot'><div id='chatHeader'>AI Chatbot</div><div id='chatBody'></div><div id='chatInputBox'><input id='chatInput'><button id='chatSend' onclick='sendMessage()'>Send</button></div></div>
+<script src='chatbot.js'></script><script>document.getElementById("bookingForm").addEventListener("submit",function(e){e.preventDefault();const p=document.getElementById("patient").value;const d=document.getElementById("doctor").value;const date=document.getElementById("date").value;const time=document.getElementById("time").value;document.getElementById("bookingMessage").textContent="Appointment booked for "+p+" with "+d+" on "+date+" at "+time;});</script>
+</body></html>
